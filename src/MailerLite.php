@@ -124,4 +124,12 @@ class MailerLite {
         return ApiConstants::BASE_URL . $version . '/';
     }
 
+    /**
+	 * Return the last responses headers.
+	 * @return array|null
+	 */
+	public function getLastResponseHeaders() {
+		return $this->restClient->getLastResponseHeaders();
+	}
+
 }

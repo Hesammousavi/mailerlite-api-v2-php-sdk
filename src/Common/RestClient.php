@@ -82,6 +82,14 @@ class RestClient {
     }
 
     /**
+	 * Return the last responses headers.
+	 * @return array|null
+	 */
+	public function getLastResponseHeaders() {
+		return $this->lastResponseHeaders;
+	}
+
+    /**
      * Execute HTTP request
      *
      * @param  string $method

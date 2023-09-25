@@ -40,11 +40,8 @@ abstract class ApiAbstract {
             $params['fields'] = $fields;
         }
 
-        $response = $this->restClient->get($this->endpoint, $params);
-
-        $entities = $this->generateCollection($response['body']);
-
-        return $entities;
+//        $entities = $this->generateCollection($response['body']);
+        return $this->restClient->get($this->endpoint, $params);
     }
 
     /**
@@ -59,9 +56,7 @@ abstract class ApiAbstract {
             throw new \Exception('ID must be set');
         }
 
-        $response = $this->restClient->get($this->endpoint . '/' . $id);
-
-        return $response['body'];
+        return $this->restClient->get($this->endpoint . '/' . $id);
     }
 
     /**
@@ -72,8 +67,7 @@ abstract class ApiAbstract {
      */
     public function create($data)
     {
-        $response = $this->restClient->post($this->endpoint, $data);
-        return $response['body'];
+        return $this->restClient->post($this->endpoint, $data);
     }
 
     /**
@@ -85,9 +79,7 @@ abstract class ApiAbstract {
      */
     public function update($id, $data)
     {
-        $response = $this->restClient->put($this->endpoint . '/' . $id, $data);
-
-        return $response['body'];
+        return $this->restClient->put($this->endpoint . '/' . $id, $data);
     }
 
     /**
@@ -98,9 +90,7 @@ abstract class ApiAbstract {
      */
     public function delete($id)
     {
-        $response = $this->restClient->delete($this->endpoint . '/' . $id);
-
-        return $response['body'];
+        return $this->restClient->delete($this->endpoint . '/' . $id);
     }
 
     /**
@@ -110,9 +100,7 @@ abstract class ApiAbstract {
      */
     public function count()
     {
-        $response = $this->restClient->get($this->endpoint . '/count');
-
-        return $response['body'];
+        return $this->restClient->get($this->endpoint . '/count');
     }
 
     /**

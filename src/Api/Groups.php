@@ -107,4 +107,19 @@ class Groups extends ApiAbstract {
 
         return $response['body'];
     }
+
+    /**
+    * @param  string $groupName
+    * @return [type]
+    */
+    public function search($groupName)
+    {
+        $endpoint = $this->endpoint . '/search';
+
+        $response = $this->restClient->post($endpoint, [
+            'group_name' => $groupName
+        ]);
+
+        return $response['body'];
+    }
 }

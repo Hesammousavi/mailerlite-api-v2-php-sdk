@@ -30,9 +30,7 @@ class Groups extends ApiAbstract {
 
         $params = array_merge($this->prepareParams(), $params);
 
-        $response = $this->restClient->get($endpoint, $params);
-
-        return $response['body'];
+        return $this->restClient->get($endpoint, $params);
     }
 
     /**
@@ -46,9 +44,7 @@ class Groups extends ApiAbstract {
     {
         $endpoint = $this->endpoint . '/' . $groupId . '/subscribers/' . urlencode($subscriberId);
 
-        $response = $this->restClient->get($endpoint);
-
-        return $response['body'];
+        return $this->restClient->get($endpoint);
     }
 
 
@@ -64,9 +60,7 @@ class Groups extends ApiAbstract {
     {
         $endpoint = $this->endpoint . '/' . $groupId . '/subscribers';
 
-        $response = $this->restClient->post($endpoint, $subscriberData);
-
-        return $response['body'];
+        return $this->restClient->post($endpoint, $subscriberData);
     }
 
     /**
@@ -80,9 +74,7 @@ class Groups extends ApiAbstract {
     {
         $endpoint = $this->endpoint . '/' . $groupId . '/subscribers/' . urlencode($subscriberId);
 
-        $response = $this->restClient->delete($endpoint);
-
-        return $response['body'];
+        return $this->restClient->delete($endpoint);
     }
 
     /**
@@ -103,9 +95,7 @@ class Groups extends ApiAbstract {
     ) {
         $endpoint = $this->endpoint . '/' . $groupId . '/subscribers/import';
 
-        $response = $this->restClient->post($endpoint, array_merge(['subscribers' => $subscribers], $options));
-
-        return $response['body'];
+        return $this->restClient->post($endpoint, array_merge(['subscribers' => $subscribers], $options));
     }
 
     /**
@@ -116,10 +106,8 @@ class Groups extends ApiAbstract {
     {
         $endpoint = $this->endpoint . '/search';
 
-        $response = $this->restClient->post($endpoint, [
+        return $this->restClient->post($endpoint, [
             'group_name' => $groupName
         ]);
-
-        return $response['body'];
     }
 }

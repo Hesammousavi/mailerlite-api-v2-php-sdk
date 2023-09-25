@@ -15,9 +15,7 @@ class Fields extends ApiAbstract {
 
     public function getAccountFields() {
 
-        $response = $this->restClient->get($this->endpoint);
-
-        return $response['body'];
+        return $this->restClient->get($this->endpoint);
     }
 
 }

@@ -32,9 +32,7 @@ class Campaigns extends ApiAbstract {
 
         $endpoint = $this->endpoint . '/' . $campaignId . '/content';
 
-        $response = $this->restClient->put($endpoint, $contentData);
-
-        return $response['body'];
+        return $this->restClient->put($endpoint, $contentData);
     }
 
     /**
@@ -48,9 +46,7 @@ class Campaigns extends ApiAbstract {
     {
         $endpoint = $this->endpoint . '/' . $campaignId . '/actions/send';
 
-        $response = $this->restClient->post($endpoint, $settingsData);
-
-        return $response['body'];
+        return $this->restClient->post($endpoint, $settingsData);
     }
 
     /**
@@ -63,9 +59,7 @@ class Campaigns extends ApiAbstract {
     {
         $endpoint = $this->endpoint . '/' . $campaignId . '/actions/cancel';
 
-        $response = $this->restClient->post($endpoint);
-
-        return $response['body'];
+        return $this->restClient->post($endpoint);
     }
 
     /**

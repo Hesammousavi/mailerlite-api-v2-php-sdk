@@ -32,9 +32,7 @@ class Subscribers extends ApiAbstract {
 
         $params = array_merge($this->prepareParams(), $params);
 
-        $response = $this->restClient->get($endpoint, $params);
-
-        return $response['body'];
+        return $this->restClient->get($endpoint, $params);
     }
 
     /**
@@ -55,9 +53,7 @@ class Subscribers extends ApiAbstract {
 
         $params = array_merge($this->prepareParams(), $params);
 
-        $response = $this->restClient->get($endpoint, $params);
-
-        return $response['body'];
+        return $this->restClient->get($endpoint, $params);
     }
 
     /**
@@ -72,9 +68,7 @@ class Subscribers extends ApiAbstract {
 
         $params = array_merge($this->prepareParams(), ['query' => $query]);
 
-        $response = $this->restClient->get($endpoint, $params);
-
-        return $response['body'];
+        return $this->restClient->get($endpoint, $params);
     }
 
     /**

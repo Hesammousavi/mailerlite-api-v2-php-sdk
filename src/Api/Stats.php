@@ -15,16 +15,12 @@ class Stats extends ApiAbstract {
 
     public function get($fields = [])
     {
-        $response = $this->restClient->get($this->endpoint, []);
-
-        return $response['body'];
+        return $this->restClient->get($this->endpoint, []);
     }
 
     public function getHistorical($timestamp)
     {
-        $response = $this->restClient->get($this->endpoint, ['timestamp' => $timestamp]);
-
-        return $response['body'];
+        return $this->restClient->get($this->endpoint, ['timestamp' => $timestamp]);
     }
 
 }

@@ -22,9 +22,7 @@ class Settings extends ApiAbstract {
     {
         $endpoint = $this->endpoint . '/double_optin';
 
-        $response = $this->restClient->get( $endpoint );
-
-        return $response['body'];
+        return $this->restClient->get( $endpoint );
     }
 
     public function setDoubleOptin( $status ) {
@@ -33,9 +31,7 @@ class Settings extends ApiAbstract {
 
         $params = array_merge($this->prepareParams(), ['enable' => $status] );
 
-        $response = $this->restClient->post( $endpoint, $params );
-
-        return $response['body'];
+        return $this->restClient->post( $endpoint, $params );
     }
 
 }

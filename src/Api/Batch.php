@@ -35,11 +35,9 @@ class Batch extends ApiAbstract
             $request = $request->toArray();
         }
 
-        $response = $this->restClient->post($this->endpoint, [
+        return $this->restClient->post($this->endpoint, [
             'requests' => $requests,
         ]);
-
-        return $response['body'];
     }
 
 }
